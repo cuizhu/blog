@@ -63,32 +63,35 @@ TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highl
 
   Install docker first please
 
-  step1:
+  step1: Install ( only need once in all development)
+
+  Delete the Gemfile.lock first， or install error
 
   // In Windows Command Line (cmd), you can mount the current directory like so:
 
   ```bat
   docker run --rm -v %cd%:/usr/src/app -w /usr/src/app ruby:2.6 bundle install
-  docker-compose -f ./docker/docker-compose.build-image.yml build
   ```
 
   //In PowerShell, you use ${PWD}, which gives you the current directory:
 
   ```powershell
   docker run --rm -v ${PWD}:/usr/src/app -w /usr/src/app ruby:2.6 bundle install
-  docker-compose -f ./docker/docker-compose.build-image.yml build
   ```
 
   // linux
 
   ```shell
   docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.6 bundle install
+  ```
+
+  step2: Build
+
+  ```
   docker-compose -f ./docker/docker-compose.build-image.yml build
   ```
 
-  step2:
-
-  //run
+  step3:  Run
 
   ```shell
   docker-compose -f ./docker/docker-compose.default.yml up 
