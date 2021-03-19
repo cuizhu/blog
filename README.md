@@ -58,6 +58,69 @@ TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highl
 ### Start
 
 - [Quick Start](https://tianqi.name/jekyll-TeXt-theme/docs/en/quick-start)
+
+- Quick For Dev
+
+  Install docker first please
+
+  step1:
+
+  // In Windows Command Line (cmd), you can mount the current directory like so:
+
+  ```bat
+  docker run --rm -v %cd%:/usr/src/app -w /usr/src/app ruby:2.6 bundle install
+  docker-compose -f ./docker/docker-compose.build-image.yml build
+  ```
+
+  //In PowerShell, you use ${PWD}, which gives you the current directory:
+
+  ```powershell
+  docker run --rm -v ${PWD}:/usr/src/app -w /usr/src/app ruby:2.6 bundle install
+  docker-compose -f ./docker/docker-compose.build-image.yml build
+  ```
+
+  // linux
+
+  ```shell
+  docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.6 bundle install
+  docker-compose -f ./docker/docker-compose.build-image.yml build
+  ```
+
+  step2:
+
+  //run
+
+  ```shell
+  docker-compose -f ./docker/docker-compose.default.yml up 
+  ```
+
+  then open the link to test, http://localhost:4000/
+
+  
+
+  Q:
+
+  ```shell
+  /usr/local/lib/ruby/2.7.0/rubygems.rb:277:in `find_spec_for_exe': Could not find 'bundler' (1.17.2) required by your /usr/src/app/Gemfile.lock. (Gem::GemNotFoundException)
+  To update to the latest version installed on your system, run `bundle update --bundler`.
+  To install the missing version, run `gem install bundler:1.17.2`
+          from /usr/local/lib/ruby/2.7.0/rubygems.rb:296:in `activate_bin_path'
+          from /usr/local/bin/bundle:23:in `<main>'
+  ```
+
+  https://stackoverflow.com/questions/54087856/bundler-cant-find-gem-bundler-0-a-with-executable-bundle-gemgemnotfoun
+
+  A:
+  How to fixed
+  Modify the file Gemfile.lock
+
+  ```
+  BUNDLED WITH
+     2.0.1
+  ```
+
+  
+
 - [Update from 1.x to 2.x](https://tianqi.name/jekyll-TeXt-theme/docs/en/update-from-1-to-2)
 
 ### Customization

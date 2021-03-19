@@ -8,6 +8,11 @@
 *.swo
 *.log
 *.log.*
+*.c
+*.h
+*.cpp
+*.hpp
+*.cc
 
 /.vscode/
 
