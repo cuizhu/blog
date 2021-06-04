@@ -63,7 +63,7 @@ TeXt use [Tomorrow](https://github.com/chriskempson/tomorrow-theme) as the highl
 
   Install docker first please
 
-  step1: Install ( only need once in all development)
+  step1: Install ( only need once in all development,  just run the ruby2.6 before building if you have installed already )
 
   Delete the Gemfile.lock first， or install error
 
